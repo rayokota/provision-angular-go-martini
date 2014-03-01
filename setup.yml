@@ -1,0 +1,10 @@
+---
+- hosts: all
+
+  sudo: true
+
+  roles:
+    - common
+    - go
+    - generator
+    - { role: generate_testapp, when: "generate_testapp is defined and generate_testapp|bool" }

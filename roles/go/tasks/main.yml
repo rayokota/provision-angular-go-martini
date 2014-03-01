@@ -1,0 +1,25 @@
+---
+- name: Install build-essential
+  apt: pkg=build-essential
+
+- name: Add PPA for Go 1.1
+  apt_repository: repo=ppa:duh/golang
+ 
+- name: Update apt cache
+  apt: update_cache=yes
+ 
+- name: Install Go 1.1
+  apt: pkg=golang
+
+- name: Create directory for GOPATH
+  file: path=/home/ubuntu/gocode state=directory
+  sudo: false
+
+- name: Set up environment variable for GOPATH
+  lineinfile: dest=/home/ubuntu/.bashrc regexp=^GOPATH= line="export GOPATH=/home/ubuntu/gocode" state=present
+  sudo: false
+
+- name: Comment out line which prevents loading bash profile by ssh
+  lineinfile: dest=/home/ubuntu/.bashrc regexp='[ -z "$PS1" ] && return' line='# [ -z "$PS1" ] && return' state=present
+  sudo: false
+
