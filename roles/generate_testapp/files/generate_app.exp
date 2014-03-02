@@ -49,6 +49,4 @@ expect "*yeoman*"
 send -- "n\r"
 expect "*name*"
 send -- "yourapp\r"
-expect "*package*"
-send -- "com.yourcompany.yourapp\r"
 expect eof
