@@ -12,14 +12,14 @@
   apt: pkg=golang
 
 - name: Create directory for GOPATH
-  file: path=/home/ubuntu/gocode state=directory
+  file: path=~/gocode state=directory
   sudo: false
 
 - name: Set up environment variable for GOPATH
-  lineinfile: dest=/home/ubuntu/.bashrc regexp=^GOPATH= line="export GOPATH=/home/ubuntu/gocode" state=present
+  lineinfile: dest=~/.bashrc regexp=^GOPATH= line="export GOPATH=$HOME/gocode" state=present
   sudo: false
 
 - name: Comment out line which prevents loading bash profile by ssh
-  lineinfile: dest=/home/ubuntu/.bashrc regexp='[ -z "$PS1" ] && return' line='# [ -z "$PS1" ] && return' state=present
+  lineinfile: dest=~/.bashrc regexp='[ -z "$PS1" ] && return' line='# [ -z "$PS1" ] && return' state=present
   sudo: false
 
