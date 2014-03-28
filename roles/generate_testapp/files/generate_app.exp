@@ -49,4 +49,6 @@ expect "*yeoman*"
 send -- "n\r"
 expect "*name*"
 send -- "yourapp\r"
+expect "*bower*"
+send -- "\r"
 expect eof
