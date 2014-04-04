@@ -1,6 +1,6 @@
 # The Angular-Go-Martini provisioner 
 
-An [Ansible](http://www.ansible.com/home) provisioner for [AngularJS](http://angularjs.org) and [Martini](https://github.com/codegangsta/martini).
+An [Ansible](http://www.ansible.com/home) provisioner for [AngularJS](http://angularjs.org) and [Martini](https://github.com/go-martini/martini).
 
 
 This provisioner installs the [Angular-Go-Martini generator](https://github.com/rayokota/generator-angular-go-martini) and all prerequisites.  Currently it only supports Ubuntu 12.04.
