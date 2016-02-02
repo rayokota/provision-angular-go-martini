@@ -43,10 +43,8 @@ if {$force_conservative} {
 
 
 set timeout -1
-spawn yo angular-go-martini
+spawn yo --no-insight angular-go-martini
 match_max 100000
-expect "*yeoman*"
-send -- "n\r"
 expect "*name*"
 send -- "yourapp\r"
 expect "*bower*"
